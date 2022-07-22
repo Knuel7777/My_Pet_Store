@@ -1,0 +1,11 @@
+<div class="container">
+    <form >
+        <input type="text" placeholder="Numero Pokemon" id="numPokemon" name="numPokemon" [(ngModel)]="numPokemon"><br>
+        <input type="button" value="Buscar" (click)="getPokemon()"><br>
+
+        <section *ngIf="view">
+            <p>Name: <span>{{ namePokemon }}</span></p>
+            <img src="{{ imgPokemon }}" alt="" height="300" width="300" style="margin-top: -80px;">
+        </section>
+    </form>
+</div>
