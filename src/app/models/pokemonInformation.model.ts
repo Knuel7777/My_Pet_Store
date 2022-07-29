@@ -10,3 +10,9 @@ export class Artwork {
         this.front_default = _front_default;
     }
 }
+
+
+export interface pokemonTeam {
+    name: string;
+    img: string;
+}

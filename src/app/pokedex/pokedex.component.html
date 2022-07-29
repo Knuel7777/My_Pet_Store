@@ -4,8 +4,27 @@
         <input type="button" value="Buscar" (click)="getPokemon()"><br>
 
         <section *ngIf="view">
-            <p>Name: <span>{{ namePokemon }}</span></p>
+            <p class="c">Name: <span>{{ namePokemon }}</span> <button title="Add Pokemon al Equipo" class="add_button" (click)="addPokemonToMyTeam()">+</button></p>
             <img src="{{ imgPokemon }}" alt="" height="300" width="300" style="margin-top: -80px;">
         </section>
     </form>
+</div>
+<br>
+<br>
+<div>
+    <h3>My Pokemon Team</h3>
+    <table>
+        <thead>
+            <th>Pokemon Name</th>
+            <th>Pokemon Image</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pokemon of myPokemonTeam">
+                <td class="c">{{ pokemon.name }}</td>
+                <td><img src="{{ pokemon.img }}" alt=""></td>
+                <td><button class="buttonDelete" (click)="deletePokemonToMyTeam()">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
